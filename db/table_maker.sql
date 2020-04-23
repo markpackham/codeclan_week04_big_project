@@ -1,9 +1,31 @@
-DROP TABLE btable;
-DROP TABLE atable;
+DROP TABLE registers;
 
-CREATE TABLE atable (id SERIAL primary key);
+DROP TABLE customers;
 
-CREATE TABLE btable (
+DROP TABLE lessons;
+
+CREATE TABLE customers (
+  id SERIAL primary key,
+  first_name VARCHAR(255),
+  last_name VARCHAR(255),
+  phone VARCHAR(255),
+  funds FLOAT
+);
+
+CREATE TABLE lessons (
+  id SERIAL primary key,
+  name VARCHAR(255),
+  first_name VARCHAR(255),
+  last_name VARCHAR(255),
+  phone VARCHAR(255),
+  week_day VARCHAR(255),
+  price FLOAT,
+  max_capacity INT,
+  active BOOLEAN DEFAULT true
+);
+
+CREATE TABLE registers (
   id SERIAL PRIMARY KEY,
-  fk_id INT REFERENCES atable(id) ON DELETE CASCADE
+  customer_id INT REFERENCES customers(id) ON DELETE CASCADE,
+  lessons_id INT REFERENCES lessons(id) ON DELETE CASCADE
 );
