@@ -1,5 +1,11 @@
 Use StarUML for Class Diagrams
 Use Pencil for Wireframes
+Use software for diagrams - especially Activity/Flowchat, my drawings will be too messy
+Draw.Io (renamed to something new)
+
+Make note in Implementation Constraints Plan
+- I have no budget, work and software is free but constraint, can't hire workers or premium software
+- My time limit is one week
 
 Must Haves
 Should Haves
