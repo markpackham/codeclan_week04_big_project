@@ -1,0 +1,2 @@
+Use StarUML for Class Diagrams
+Use Pencil for Wireframes
