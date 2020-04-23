@@ -1,2 +1,7 @@
 Use StarUML for Class Diagrams
 Use Pencil for Wireframes
+
+Must Haves
+Should Haves
+Could Haves
+Won't Haves
