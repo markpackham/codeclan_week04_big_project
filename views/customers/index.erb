@@ -1,0 +1,8 @@
+<h1>Customers</h1>
+<div class="content">
+  <% for customer in @customers %>
+  <%= customer.first_name %>   <%= customer.last_name %>
+  <br>
+  <a href="/customers/<%= customer.id %>">Customer Id: <%= customer.id %></a>
+  <% end %>
+</div>
