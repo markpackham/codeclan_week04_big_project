@@ -1113,7 +1113,7 @@
 											"top": 397,
 											"width": 343,
 											"height": 13,
-											"text": "+member_id: Int",
+											"text": "+customer_id: Int",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2351,7 +2351,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFxp8CR7Es6O+I="
 							},
-							"name": "member_id",
+							"name": "customer_id",
 							"type": "Int"
 						},
 						{
