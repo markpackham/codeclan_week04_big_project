@@ -60,7 +60,10 @@ class Register
     return Register.new(results.first)
   end
 
-  def register()
+  def register_customer()
+    # check if lesson active
+    # check if customer can afford
+    # check if lesson already full
   end
 
   def self.map_items(register_data)

@@ -865,7 +865,7 @@
 											"top": 296,
 											"width": 343,
 											"height": 13,
-											"text": "+show_lesson_members(id)",
+											"text": "+show_lesson_customers(id)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1942,7 +1942,8 @@
 									"_parent": {
 										"$ref": "AAAAAAFxp74gR0r4GJM="
 									},
-									"name": "id"
+									"name": "id",
+									"type": ""
 								}
 							]
 						},
@@ -1995,7 +1996,8 @@
 									"_parent": {
 										"$ref": "AAAAAAFxp75TwksC0d8="
 									},
-									"name": "id"
+									"name": "id",
+									"type": ""
 								}
 							]
 						},
@@ -2218,7 +2220,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFxp7pkC0qVfU8="
 							},
-							"name": "show_lesson_members",
+							"name": "show_lesson_customers",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -2226,8 +2228,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFxp885+lQE3Hk="
 									},
-									"name": "id",
-									"type": ""
+									"name": "id"
 								}
 							]
 						},
