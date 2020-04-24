@@ -4,10 +4,10 @@ class Customer
   attr_reader(:id, :first_name, :last_name, :phone, :funds)
 
   def initialize(options)
-    @id = options["id"].to_i if options['id'],
-          @first_name = options["first_name"],
-          @last_name = options["last_name"],
-          @phone = options["phone"],
+    @id = options["id"].to_i if options["id"]
+    @first_name = options["first_name"]
+    @last_name = options["last_name"]
+    @phone = options["phone"]
     @funds = options["funds"].to_f
   end
 

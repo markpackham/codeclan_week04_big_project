@@ -4,8 +4,8 @@ class Register
   attr_reader(:id, :customer_id, :lesson_id)
 
   def initialize(options)
-    @id = options["id"].to_i if options['id'],
-    @customer_id = options["customer_id"].to_i,
+    @id = options["id"].to_i if options['id']
+    @customer_id = options["customer_id"].to_i
     @lesson_id = options["lesson_id"].to_i
   end
 

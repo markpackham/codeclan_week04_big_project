@@ -4,15 +4,18 @@ class Lesson
   attr_reader(:id, :name, :first_name, :last_name, :phone, :week_day, :price, :max_capacity, :active )
 
   def initialize(options)
-    @id = options["id"].to_i if options['id'],
-    @name = options['name'],
-    @first_name = options['first_name'],
-    @last_name = options['last_name'],
-    @phone = options['phone'],
-    @week_day = options['week_day'],
-    @price = options['price'].to_f,
-    @max_capacity = options['max_capacity'].to_i,
-    @active = options['active'].to_b
+    @id = options["id"].to_i if options['id']
+    # class name
+    @name = options['name']
+    # instructor first & last names
+    @first_name = options['first_name']
+    @last_name = options['last_name']
+    @phone = options['phone']
+    @week_day = options['week_day']
+    @price = options['price'].to_f
+    @max_capacity = options['max_capacity'].to_i
+    # is the lesson still available/active
+    @active = options['active'] 
   end
 
   def self.delete_all
