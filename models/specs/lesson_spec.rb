@@ -6,9 +6,19 @@ require_relative("../lesson")
 
 class TestLesson < MiniTest::Test
   def setup
-    options = { "id" => 1, "name" => "yoga", "first_name" => "Jeff", "last_name" => "Insti", "phone" => "11111111111", "week_day" => "Monday", "price" => 1, "max_capacity" => 10, "active" => true }
+    options1 = { "id" => 1, "name" => "yoga", "first_name" => "Jeff", "last_name" => "Insti", "phone" => "11111111111", "week_day" => "Monday", "price" => 1, "max_capacity" => 10, "active" => true }
+    options2 = { "id" => 2, "name" => "weight lifting", "first_name" => "Keith", "last_name" => "Vaz", "phone" => "21111111111", "week_day" => "Tuesday", "price" => 2, "max_capacity" => 20, "active" => true }
+    options3 = { "id" => 3, "name" => "fencing", "first_name" => "Alan", "last_name" => "McBlade", "phone" => "31111111111", "week_day" => "Wednesday", "price" => 3, "max_capacity" => 30, "active" => true }
+    options4 = { "id" => 4, "name" => "karate", "first_name" => "Yoshi", "last_name" => "Splinter", "phone" => "41111111111", "week_day" => "Thursday", "price" => 4, "max_capacity" => 40, "active" => true }
+    options5 = { "id" => 5, "name" => "gymnatics", "first_name" => "Molly", "last_name" => "Holly", "phone" => "51111111111", "week_day" => "Friday", "price" => 5, "max_capacity" => 50, "active" => true }
+    options6 = { "id" => 6, "name" => "solo yoga", "first_name" => "Jeff", "last_name" => "Insti", "phone" => "11111111111", "week_day" => "Monday", "price" => 6000, "max_capacity" => 1, "active" => true }
 
-    @lesson1 = Lesson.new(options)
+    @lesson1 = Lesson.new(options1)
+    @lesson2 = Lesson.new(options2)
+    @lesson3 = Lesson.new(options3)
+    @lesson4 = Lesson.new(options4)
+    @lesson5 = Lesson.new(options5)
+    @lesson6 = Lesson.new(options6)
   end
 
   def test_id()
@@ -54,5 +64,10 @@ class TestLesson < MiniTest::Test
   def test_active()
     result = @lesson1.active()
     assert_equal(true, result)
+  end
+
+  def test_pretty_name()
+    result = @lesson4.pretty_name()
+    assert_equal("Yoshi Splinter", result)
   end
 end
