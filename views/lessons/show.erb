@@ -1,8 +1,8 @@
 <h1>Lesson</h1>
 <div class="content">
-<%= @lesson.name %
+<%= @lesson.name.capitalize %>
 <br>
-Teach Name: <%= @lesson.first_name %> <%= @lesson.last_name %>
+Teach Name: <%= @lesson.pretty_name() %>
 <br>
 Phone: <%= @lesson.phone %>
 <br >

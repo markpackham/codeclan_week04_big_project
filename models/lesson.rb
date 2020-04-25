@@ -1,7 +1,8 @@
 require_relative("../db/sql_runner")
 
 class Lesson
-  attr_reader(:id, :name, :first_name, :last_name, :phone, :week_day, :price, :max_capacity, :active)
+  attr_accessor(:name, :first_name, :last_name, :phone, :week_day, :price, :max_capacity, :active)
+  attr_reader(:id)
 
   def initialize(options)
     @id = options["id"].to_i if options["id"]
@@ -58,7 +59,7 @@ class Lesson
       $1, $2, $3, $4, $5, $6, $7, $8
     )
     WHERE id = $9;"
-    values = [@id]
+    values = [@name, @first_name, @last_name, @phone, @week_day, @price, @max_capacity, @active, @id]
     SqlRunner.run(sql, values)
   end
 

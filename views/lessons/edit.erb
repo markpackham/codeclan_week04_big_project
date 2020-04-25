@@ -1,0 +1,29 @@
+<h1>Edit Lesson</h1>
+<form method="POST" action="/lessons/<%= @lesson.id %>">
+  <label for="name">Lesson Name:</label>
+  <input type="text" name="name" id="name" value=<%= @lesson.name %>>
+  <label for="first-name">Teacher First Name:</label>
+  <input type="text" name="first_name" id="first-name" value=<%= @lesson.first_name %>>
+  <label for="last-name">Teacher Last Name:</label>
+  <input type="text" name="last_name" id="last-name" value=<%= @lesson.last_name %>>
+  <label for="phone">Phone:</label>
+  <input type="tel" name="phone" id="phone" value=<%= @lesson.phone %>>
+  <label for="price"> Price:</label>
+  <input type="number" step="0.01" name="price" id="price" value=<%= @lesson.price %>>
+  <label for="max-capacity">Max Capacity:</label>
+  <input type="text" name="max_capacity" id="max-capacity" value=<%= @lesson.max_capacity %> >
+  <label for="week-day">Week Day:</label>
+  <select name="week_day" id="week-day">
+    <option value="Monday" <%= "selected" if @lesson.week_day == "Monday" %> >Monday</option>
+    <option value="Tuesday" <%= "selected" if @lesson.week_day == "Tuesday" %> >Tuesday</option>
+    <option value="Wednesday" <%= "selected" if @lesson.week_day == "Wednesday" %> >Wednesday</option>
+    <option value="Thursday" <%= "selected" if @lesson.week_day == "Thursday" %> >Thursday</option>
+    <option value="Friday" <%= "selected" if @lesson.week_day == "Friday" %> >Friday</option>
+  </select>
+    <label for="active">Lesson Active?:</label>
+    <select name="active" id="active">
+    <option value="TRUE" <%= "selected" if @lesson.active == "TRUE" %> >Lesson is Active</option>
+    <option value="FALSE" <%= "selected" if @lesson.active == "FALSE" %> >Lesson is NOT Active</option>
+  </select>
+  <input type="submit" value="Update" >
+</form>

@@ -1,6 +1,6 @@
 <h1>Customers</h1>
 <div class="content">
-  <% for customer in @customers %>
+  <% @customers.each do |customer| %>
   <a href="/customers/<%= customer.id %>"><%= customer.pretty_name() %></a>
   <br>
   <% end %>

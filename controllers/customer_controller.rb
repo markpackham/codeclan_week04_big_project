@@ -5,10 +5,10 @@ also_reload("../models/*")
 
 get "/customers" do
   @customers = Customer.all()
-  erb (:"customers/index")
+  erb(:"customers/index")
 end
 
-get '/customers/new' do
+get "/customers/new" do
   @customers = Customer.all()
   erb(:"customers/new")
 end
@@ -18,13 +18,25 @@ get "/customers/:id" do
   erb(:"customers/show")
 end
 
-post '/customers' do
-  @customers = Customer.new( params )
+post "/customers" do
+  @customers = Customer.new(params)
   @customers.save()
-  erb( :"customers/index" )
+  redirect to("/customers")
 end
 
-post '/customers/:id/delete' do
+get "/customers/:id/edit" do
+  @customer = Customer.all
+  @customer = Customer.find(params["id"])
+  erb(:"customers/edit")
+end
+
+post "/customers/:id" do
+  customer = Customer.new(params)
+  customer.update
+  redirect to "/customers/#{params["id"]}"
+end
+
+post "/customers/:id/delete" do
   Customer.delete(params[:id])
   redirect to("/customers")
 end

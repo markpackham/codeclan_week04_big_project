@@ -4,7 +4,7 @@
   <% for lesson in @lessons %>
     <% if lesson.active == 't' %>
       <br>
-      <a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a>
+      <a href="/lessons/<%= lesson.id %>"><%= lesson.name.capitalize %></a>
       <br>
       Teacher: <%= lesson.pretty_name() %>
       <br>

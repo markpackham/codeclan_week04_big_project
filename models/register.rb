@@ -1,7 +1,8 @@
 require_relative("../db/sql_runner")
 
 class Register
-  attr_reader(:id, :customer_id, :lesson_id)
+  attr_accessor(:customer_id, :lesson_id)
+  attr_reader(:id)
 
   def initialize(options)
     @id = options["id"].to_i if options["id"]
@@ -37,7 +38,7 @@ class Register
       $1, $2
     )
     WHERE id = $3;"
-    values = [@id]
+    values = [@customer_id, @lesson_id, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -48,9 +49,9 @@ class Register
 
   def self.delete(id)
     sql = "DELETE FROM registers
-    WHERE id = $1";
+    WHERE id = $1"
     values = [id]
-    SqlRunner.run( sql, values )
+    SqlRunner.run(sql, values)
   end
 
   def self.all()

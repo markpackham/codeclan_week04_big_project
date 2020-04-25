@@ -1284,9 +1284,9 @@
 										"$ref": "AAAAAAFxp8OKAEt+WEw="
 									},
 									"font": "Arial;13;0",
-									"left": 390,
+									"left": 387,
 									"top": 298,
-									"width": 247,
+									"width": 252.53515625,
 									"height": 13,
 									"alpha": 0.787664750479963,
 									"distance": 134.01492454200763,
@@ -1294,7 +1294,7 @@
 										"$ref": "AAAAAAFxp8OKAUuCFtk="
 									},
 									"edgePosition": 1,
-									"text": "+A Member must Register to get a Lesson"
+									"text": "+A Customer must Register to get a Lesson"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -1802,6 +1802,32 @@
 							"headQualifiersCompartment": {
 								"$ref": "AAAAAAFxp8O6G0vvl+s="
 							}
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAFxsmfRxWQ14Wc=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"left": 896,
+							"top": 488,
+							"width": 305,
+							"height": 121,
+							"text": "The Register Class serves the Customer and the Lesson Classes. It is used to help find out which customers are attending which lessons in the gym."
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAFxsmpUVmSbcus=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"font": "Arial;13;0",
+							"left": 520,
+							"top": 504,
+							"width": 245.86083984375,
+							"height": 81,
+							"text": "Every attribute in every Class has a getter method for it. In this case using Ruby's attr_reader(). I didn't want to list ever single one in the operations to avoid the diagrams getting to bloated."
 						}
 					]
 				},
@@ -1819,7 +1845,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFxp7l17EpIeZs="
 							},
-							"name": "A Member must Register to get a Lesson",
+							"name": "A Customer must Register to get a Lesson",
 							"end1": {
 								"_type": "UMLAssociationEnd",
 								"_id": "AAAAAAFxp8OKAEt/EFU=",
@@ -2228,7 +2254,8 @@
 									"_parent": {
 										"$ref": "AAAAAAFxp885+lQE3Hk="
 									},
-									"name": "id"
+									"name": "id",
+									"type": ""
 								}
 							]
 						},

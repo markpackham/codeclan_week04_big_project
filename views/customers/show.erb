@@ -4,6 +4,9 @@ Name: <%= @customer.pretty_name() %>
 Phone: <%= @customer.phone %>
 <br >
 Funds: <%= @customer.funds %>
+<br>
+<a href="/customers/<%= @customer.id %>/edit">Edit</a>
+<br>
 <form method="post" action="/customers/<%= @customer.id %>/delete">
   <input type="submit" value="Delete"/>
 </form>
