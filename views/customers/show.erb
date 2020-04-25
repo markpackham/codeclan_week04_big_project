@@ -1,6 +1,9 @@
 <h1>Customer</h1>
-Name: <%= @customer.first_name %> <%= @customer.last_name %>
+Name: <%= @customer.pretty_name() %>
 <br>
 Phone: <%= @customer.phone %>
 <br >
 Funds: <%= @customer.funds %>
+<form method="post" action="/customers/<%= @customer.id %>/delete">
+  <input type="submit" value="Delete"/>
+</form>

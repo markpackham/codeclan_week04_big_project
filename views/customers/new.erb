@@ -1,4 +1,12 @@
 <h1>Create Customer</h1>
-<form>
-<input type="submit" value="Create"/>
+<form method="POST" action="/customers">
+  <label for="first-name">First Name:</label>
+  <input type="text" name="first_name" id="first-name" required/>
+  <label for="last-name">Last Name:</label>
+  <input type="text" name="last_name" id="last-name" required/>
+  <label for="phone">Phone:</label>
+  <input type="tel" name="phone" id="phone" required/>
+  <label for="funds"> Funds:</label>
+  <input type="number" step="0.01" name="funds" id="funds" required/>
+  <input type="submit" value="Create"/>
 </form>

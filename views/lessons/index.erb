@@ -1,25 +1,24 @@
 <h1>Lessons</h1>
 <div class="content">
-
-<h2>Active Lessons</h2>
+  <h2>Active Lessons</h2>
   <% for lesson in @lessons %>
-  <% if lesson.active == 't' %>
-  <%= lesson.name %>
-  <br><br>
-  Teacher: <%= lesson.first_name %>   <%= lesson.last_name %>
-  <br>
-    <a href="/lessons/<%= lesson.id %>">Lesson Id: <%= lesson.id %></a>
-      <% end %>
+    <% if lesson.active == 't' %>
+      <br>
+      <a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a>
+      <br>
+      Teacher: <%= lesson.pretty_name() %>
+      <br>
+    <% end %>
   <% end %>
-  <br><br>
-<h2>All Lessons</h2>
+  <br>
+  <h2>All Lessons</h2>
   <% for lesson in @lessons %>
-  <%= lesson.name %>
-  <br>
-  Lesson Active: <%= lesson.active %>
-  <br><br>
-  Teacher: <%= lesson.first_name %>   <%= lesson.last_name %>
-  <br>
-    <a href="/lessons/<%= lesson.id %>">Lesson Id: <%= lesson.id %></a>
+    <br>
+    <a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a>
+    <br>
+    Lesson Active Status: <%= lesson.active %>
+    <br>
+    Teacher: <%= lesson.pretty_name() %>
+    <br>
   <% end %>
 </div>

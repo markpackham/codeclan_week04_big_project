@@ -14,8 +14,14 @@ get '/customers/new' do
 end
 
 get "/customers/:id" do
-  @customers = Customer.find(params["id"].to_i)
+  @customer = Customer.find(params["id"].to_i)
   erb(:"customers/show")
+end
+
+post '/customers' do
+  @customers = Customer.new( params )
+  @customers.save()
+  erb( :"customers/index" )
 end
 
 post '/customers/:id/delete' do
