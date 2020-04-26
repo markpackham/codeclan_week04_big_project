@@ -1,2 +1,22 @@
+<h1>Register A Customer For A Lesson</h1>
 <div class="content">
+  <form action="/registers" method="post">
+    <label for="select-lesson">
+      Select a Lesson:
+      <select id="select-lesson" name="lesson_id">
+        <% for lesson in @lessons %>
+          <option value="<%= lesson.id %>"><%= lesson.name %></option>
+        <% end %>
+      </select>
+    </label>
+    <label for="select-customer">
+      Select a Lesson:
+      <select id="select-customer" name="customer_id">
+        <% for customer in @customers %>
+          <option value="<%= customer.id %>"><%= customer.pretty_name %></option>
+        <% end %>
+      </select>
+    </label>
+    <input class="btn btn--action" type='submit' value="Submit">
+  </form>
 </div>
