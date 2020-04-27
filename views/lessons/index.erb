@@ -1,44 +1,75 @@
 <h1>Lessons</h1>
 <div class="content">
-  <h2>Active Lessons</h2>
-  <% for lesson in @lessons %>
-    <% if lesson.active == 't' %>
+  <div class="flex-container">
+    <div class="container">
+      <h2>Active Lessons and their Week Days</h2>
+      <% for wk_day in ["Monday","Tuesday","Wednesday","Thursday","Friday"] %>
+        <h3><%= wk_day %></h3>
+        <% for lesson in @lessons %>
+          <% if lesson.active == 't' && lesson.week_day ==  wk_day%>
+            <a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a>
+            <br>
+            Teacher: <%= lesson.pretty_name() %>
+            <br>
+            Max Capacity: <%= lesson.max_capacity %>
+            <br>
+          <% end %>
+        <% end %>
+      <% end %>
       <br>
-      <a href="/lessons/<%= lesson.id %>"><%= lesson.name.capitalize %></a>
+    </div>
+    <div class="container">
+      <h2>All Lessons</h2>
+      <p>The gym has offered a total of <%= @lessons.length%> lessons through its life.</p>
+      <% for lesson in @lessons %>
+        <br>
+        <a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a>
+        <br>
+        Lesson Status: 
+        <% if lesson.active == 't' %>
+          Active
+        <% else %>
+          Inactive
+        <% end %>
+        <br>
+        Teacher: <%= lesson.pretty_name() %>
+        <br>
+      <% end %>
+    </div>
+    <div class="container">
+      <h2>Most Expensive 3 Lessons</h2>
+      <% for lesson in @lessons_expensive %>
+        <br>
+        <a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a>
+        <br>
+        Lesson Price: £<%= lesson.price %>
+        <br>
+        Teacher: <%= lesson.pretty_name() %>
+        <br>
+      <% end %>
       <br>
-      Teacher: <%= lesson.pretty_name() %>
-      <br>
-    <% end %>
-  <% end %>
-  <br>
-  <h2>All Lessons</h2>
-  <% for lesson in @lessons %>
-    <br>
-    <a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a>
-    <br>
-    Lesson Active Status: <%= lesson.active %>
-    <br>
-    Teacher: <%= lesson.pretty_name() %>
-    <br>
-  <% end %>
-    <h2>Dearest 3 Lessons</h2>
-  <% for lesson in @lessons_expensive %>
-    <br>
-    <a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a>
-    <br>
-    Lesson Price: <%= lesson.price %>
-    <br>
-    Teacher: <%= lesson.pretty_name() %>
-    <br>
-  <% end %>
+      Average price for a lesson: £<%= @average_price %>
+    </div>
+    <div class="container">
       <h2>Cheapest 3 Lessons</h2>
-  <% for lesson in @lessons_cheap %>
-    <br>
-    <a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a>
-    <br>
-    Lesson Price: <%= lesson.price %>
-    <br>
-    Teacher: <%= lesson.pretty_name() %>
-    <br>
-  <% end %>
-</div>
+      <% for lesson in @lessons_cheap %>
+        <br>
+        <a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a>
+        <br>
+        Lesson Price: £<%= lesson.price %>
+        <br>
+        Teacher: <%= lesson.pretty_name() %>
+        <br>
+      <% end %>
+        <div class="container">
+          <h2>Lessons Fully Booked</h2>
+          <% for lesson in @lessons %>
+            <% if lesson.max_capacity < 1 %>
+              <br>
+              <a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a>
+              <br>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>

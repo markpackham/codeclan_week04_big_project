@@ -84,6 +84,10 @@ class Customer_Lesson
     return Lesson.new(results.first)
   end
 
+  def charge_customer(customer,lesson)
+    customer.funds = customer.funds - lesson.price
+  end
+
   def self.map_items(customer_lesson_data)
     return customer_lesson_data.map { |customer_lesson| Customer_Lesson.new(customer_lesson) }
   end

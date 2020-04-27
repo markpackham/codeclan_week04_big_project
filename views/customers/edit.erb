@@ -1,12 +1,14 @@
 <h1>Edit Customer</h1>
-<form method="POST" action="/customers/<%= @customer.id %>">
-  <label for="first-name">First Name:</label>
-  <input type="text" name="first_name" id="first-name" value=<%= @customer.first_name %>>
-<label for="last-name">Last Name:</label>
-<input type="text" name="last_name" id="last-name" value=<%= @customer.last_name %>>
-<label for="phone">Phone:</label>
-<input type="tel" name="phone" id="phone" value=<%= @customer.phone %>>
-<label for="funds"> Funds:</label>
-<input type="number" step="0.01" name="funds" id="funds" value=<%= @customer.funds %>>
-<input type="submit" value="Update"/>
-</form>
+<div class="content">
+  <form method="POST" action="/customers/<%= @customer.id %>">
+    <label for="first-name">First Name:</label>
+    <input type="text" name="first_name" id="first-name" value=<%= @customer.first_name %>>
+    <label for="last-name">Last Name:</label>
+    <input type="text" name="last_name" id="last-name" value=<%= @customer.last_name %>>
+    <label for="phone">Phone:</label>
+    <input type="tel" name="phone" id="phone" value=<%= @customer.phone %>>
+    <label for="funds"> Funds:</label>
+    <input type="number" step="0.01" name="funds" id="funds" value=<%= @customer.funds %>>
+    <input type="submit" value="Update"/>
+  </form>
+</div>

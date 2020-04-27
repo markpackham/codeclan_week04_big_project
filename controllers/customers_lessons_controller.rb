@@ -6,15 +6,15 @@ require_relative("../models/customer.rb")
 also_reload("../models/*")
 
 get "/customers-lessons" do
-  @customer = Customer.all()
-  @lesson = Lesson.all()
-  @customer_lesson = Customer_Lesson.all()
+  @customers = Customer.all()
+  @lessons = Lesson.all()
+  @customers_lessons = Customer_Lesson.all()
   erb(:"customers-lessons/index")
 end
 
 get "/customers-lessons/new" do
-  @customer = Customer.all()
-  @lesson = Lesson.all()
+  @customers = Customer.all()
+  @lessons = Lesson.all()
   erb(:"customers-lessons/new")
 end
 

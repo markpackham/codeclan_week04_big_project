@@ -2,6 +2,11 @@
   --primary-color: rgb(173, 168, 168);
   --secondary-color: rgb(140, 187, 140);
   --background-color: rgb(5, 5, 129);
+  --edit-background-color: rgb(4, 41, 19);
+  --edit-foreground-color: rgb(252, 252, 252);
+  --danger-background-color: rgb(114, 9, 14);
+  --danger-foreground-color: rgb(252, 252, 252);
+  --footer-background-color: rgb(5, 57, 61);
 }
 
 body {
@@ -13,16 +18,20 @@ body {
   background-color: var(--background-color);
 }
 
-nav {
-}
-footer{
-  margin-left: 1rem;
+footer {
+  margin-left: 46%;
+  padding: 0.5rem;
+  position: fixed;
+  bottom: 0;
+  background-color: var(--footer-background-color);
 }
 h1 {
   text-align: center;
   font-size: 2rem;
+  padding: 0.5rem;
+  background-color: var(--footer-background-color);
 }
-h2{
+h2 {
   margin-bottom: 1rem;
 }
 p {
@@ -37,13 +46,76 @@ ul {
   list-style: none;
 }
 li {
+  margin: 0.5rem 0;
+}
+label,
+input {
   margin: 0.5rem;
 }
-.content{
+.content {
   margin: 1rem;
+  border: thick;
+}
+
+.edit-btn {
+  font-size: 1.2rem;
+  color: var(--edit-foreground-color);
+  background-color: var(--edit-background-color);
+}
+
+.edit-btn:hover {
+  font-size: 1.5rem;
+}
+
+a.edit-btn {
+  margin-left: 0.5rem;
+}
+
+form input.delete-btn {
+  color: var(--danger-foreground-color);
+  background-color: var(--danger-background-color);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+form input.delete-btn:hover {
+  font-size: 1.5rem;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.container,
+.container-block {
+  width: 250;
+  margin: 2rem;
+  text-align: center;
+}
+
+.container-block {
+  display: inline-block;
 }
 /*
 Small Screens
 */
-@media (max-height: 600px) {
+@media (max-height: 640px) {
+  nav {
+    text-align: center;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container,
+  .container-block {
+    width: 100%;
+  }
+
+  input {
+    width: 80%;
+  }
 }

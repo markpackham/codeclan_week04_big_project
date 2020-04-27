@@ -1,4 +1,5 @@
 <h1>Edit Lesson</h1>
+<div class="content">
 <form method="POST" action="/lessons/<%= @lesson.id %>">
   <label for="name">Lesson Name:</label>
   <input type="text" name="name" id="name" value=<%= @lesson.name %>>
@@ -11,7 +12,7 @@
   <label for="price"> Price:</label>
   <input type="number" step="0.01" name="price" id="price" value=<%= @lesson.price %>>
   <label for="max-capacity">Max Capacity:</label>
-  <input type="text" name="max_capacity" id="max-capacity" value=<%= @lesson.max_capacity %> >
+  <input type="number" required min="1" max="100" name="max_capacity" id="max-capacity" value=<%= @lesson.max_capacity %> >
   <label for="week-day">Week Day:</label>
   <select name="week_day" id="week-day">
     <option value="Monday" <%= "selected" if @lesson.week_day == "Monday" %> >Monday</option>
@@ -27,3 +28,4 @@
   </select>
   <input type="submit" value="Update" >
 </form>
+</div>
