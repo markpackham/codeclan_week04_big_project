@@ -9,9 +9,9 @@
             <p>
               <%= c_l.customer.pretty_name %>
             </p>
-                          <form action="/customers-lessons/<%= c_l.id %>/delete" method="POST">
-                <input type="submit" value="delete" />
-              </form>
+            <form action="/customers-lessons/<%= c_l.id %>/delete" method="POST">
+              <input type="submit" value="delete" />
+            </form>
           <% end %>
         <% end %>
       </p>

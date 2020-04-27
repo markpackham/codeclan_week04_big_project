@@ -5,7 +5,9 @@
       Select a Lesson:
       <select id="select-lesson" name="lesson_id">
         <% for les in @lesson %>
-          <option value="<%= les.id %>"><%= les.name %></option>
+          <% if les.active != 'f'%>
+            <option value="<%= les.id %>"><%= les.name %></option>
+          <% end %>
         <% end %>
       </select>
     </label>
