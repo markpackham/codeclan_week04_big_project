@@ -324,7 +324,7 @@
 											"top": 222,
 											"width": 263,
 											"height": 13,
-											"text": "+update_customer(id)",
+											"text": "+update_customer()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -353,6 +353,7 @@
 											"model": {
 												"$ref": "AAAAAAFxp8mLAU3ROdA="
 											},
+											"visible": false,
 											"font": "Arial;13;0",
 											"left": 29,
 											"top": 252,
@@ -396,13 +397,47 @@
 											"height": 13,
 											"text": "+register(id, register_id)",
 											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFxvEB9RYZlbQI=",
+											"_parent": {
+												"$ref": "AAAAAAFxp7l17UpRVU0="
+											},
+											"model": {
+												"$ref": "AAAAAAFxvEB9G4Zi4v8="
+											},
+											"font": "Arial;13;0",
+											"left": 29,
+											"top": 252,
+											"width": 263,
+											"height": 13,
+											"text": "+pretty_name(first_name, last_name)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFxvEglwoqS0ZA=",
+											"_parent": {
+												"$ref": "AAAAAAFxp7l17UpRVU0="
+											},
+											"model": {
+												"$ref": "AAAAAAFxvEglq4qPGgI="
+											},
+											"font": "Arial;13;0",
+											"left": 29,
+											"top": 267,
+											"width": 263,
+											"height": 13,
+											"text": "+high_spenders()",
+											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 24,
 									"top": 172,
 									"width": 273,
-									"height": 98
+									"height": 113
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -825,6 +860,7 @@
 											"model": {
 												"$ref": "AAAAAAFxp8qqyk6N4/0="
 											},
+											"visible": false,
 											"font": "Arial;13;0",
 											"left": 877,
 											"top": 281,
@@ -862,10 +898,10 @@
 											},
 											"font": "Arial;13;0",
 											"left": 877,
-											"top": 296,
+											"top": 281,
 											"width": 343,
 											"height": 13,
-											"text": "+show_lesson_customers(id)",
+											"text": "+update_lesson()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -879,7 +915,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 877,
-											"top": 311,
+											"top": 296,
 											"width": 343,
 											"height": 13,
 											"text": "+lesson_current_size(id)",
@@ -896,10 +932,10 @@
 											},
 											"font": "Arial;13;0",
 											"left": 877,
-											"top": 326,
+											"top": 311,
 											"width": 343,
 											"height": 13,
-											"text": "+pretty_name(first_name, last_name)",
+											"text": "+pretty_name(instructor_first_name, instructor_last_name)",
 											"horizontalAlignment": 0
 										},
 										{
@@ -913,10 +949,44 @@
 											},
 											"font": "Arial;13;0",
 											"left": 877,
+											"top": 326,
+											"width": 343,
+											"height": 13,
+											"text": "+show_active_lessons()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFxvEcOIYoM4hk=",
+											"_parent": {
+												"$ref": "AAAAAAFxp7pkDEqe2vg="
+											},
+											"model": {
+												"$ref": "AAAAAAFxvEcN/ooJbrQ="
+											},
+											"font": "Arial;13;0",
+											"left": 877,
 											"top": 341,
 											"width": 343,
 											"height": 13,
-											"text": "+show_active_lessons(active)",
+											"text": "+expensive()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFxvEcotopPXLI=",
+											"_parent": {
+												"$ref": "AAAAAAFxp7pkDEqe2vg="
+											},
+											"model": {
+												"$ref": "AAAAAAFxvEconIpMUaU="
+											},
+											"font": "Arial;13;0",
+											"left": 877,
+											"top": 356,
+											"width": 343,
+											"height": 13,
+											"text": "+cheap()",
 											"horizontalAlignment": 0
 										}
 									],
@@ -924,7 +994,7 @@
 									"left": 872,
 									"top": 216,
 									"width": 353,
-									"height": 143
+									"height": 158
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -1159,6 +1229,7 @@
 											"model": {
 												"$ref": "AAAAAAFxqwkGq+Oexd4="
 											},
+											"visible": false,
 											"font": "Arial;13;0",
 											"left": 477,
 											"top": 435,
@@ -1194,12 +1265,132 @@
 											"model": {
 												"$ref": "AAAAAAFxrEAmPtQ8L3Y="
 											},
+											"visible": false,
 											"font": "Arial;13;0",
 											"left": 477,
-											"top": 450,
+											"top": 437,
 											"width": 343,
 											"height": 13,
 											"text": "+register_customer()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFxvEEnoYb8lnM=",
+											"_parent": {
+												"$ref": "AAAAAAFxp8CR7EtDxfI="
+											},
+											"model": {
+												"$ref": "AAAAAAFxvEEngob5RWs="
+											},
+											"font": "Arial;13;0",
+											"left": 477,
+											"top": 437,
+											"width": 343,
+											"height": 13,
+											"text": "+customer()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFxvEFg8IdRDVk=",
+											"_parent": {
+												"$ref": "AAAAAAFxp8CR7EtDxfI="
+											},
+											"model": {
+												"$ref": "AAAAAAFxvEFg0YdOSfk="
+											},
+											"font": "Arial;13;0",
+											"left": 477,
+											"top": 452,
+											"width": 343,
+											"height": 13,
+											"text": "+lesson()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFxvEOFCoh/E1A=",
+											"_parent": {
+												"$ref": "AAAAAAFxp8CR7EtDxfI="
+											},
+											"model": {
+												"$ref": "AAAAAAFxvEOE7oh823c="
+											},
+											"font": "Arial;13;0",
+											"left": 477,
+											"top": 467,
+											"width": 343,
+											"height": 13,
+											"text": "+show_registers()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFxvEP1mYjUnC4=",
+											"_parent": {
+												"$ref": "AAAAAAFxp8CR7EtDxfI="
+											},
+											"model": {
+												"$ref": "AAAAAAFxvEP1fYjRxV4="
+											},
+											"font": "Arial;13;0",
+											"left": 477,
+											"top": 482,
+											"width": 343,
+											"height": 13,
+											"text": "+show_register(id)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFxvEQfCIkfrzU=",
+											"_parent": {
+												"$ref": "AAAAAAFxp8CR7EtDxfI="
+											},
+											"model": {
+												"$ref": "AAAAAAFxvEQe7okclMQ="
+											},
+											"font": "Arial;13;0",
+											"left": 477,
+											"top": 497,
+											"width": 343,
+											"height": 13,
+											"text": "+update_register()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFxvERFFolQHdY=",
+											"_parent": {
+												"$ref": "AAAAAAFxp8CR7EtDxfI="
+											},
+											"model": {
+												"$ref": "AAAAAAFxvERE+IlNph8="
+											},
+											"font": "Arial;13;0",
+											"left": 477,
+											"top": 512,
+											"width": 343,
+											"height": 13,
+											"text": "+create_register()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFxvESTKom39w0=",
+											"_parent": {
+												"$ref": "AAAAAAFxp8CR7EtDxfI="
+											},
+											"model": {
+												"$ref": "AAAAAAFxvESTD4m0Omw="
+											},
+											"font": "Arial;13;0",
+											"left": 477,
+											"top": 527,
+											"width": 343,
+											"height": 13,
+											"text": "+delete_register()",
 											"horizontalAlignment": 0
 										}
 									],
@@ -1207,7 +1398,7 @@
 									"left": 472,
 									"top": 430,
 									"width": 353,
-									"height": 38
+									"height": 115
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -1802,32 +1993,6 @@
 							"headQualifiersCompartment": {
 								"$ref": "AAAAAAFxp8O6G0vvl+s="
 							}
-						},
-						{
-							"_type": "UMLTextView",
-							"_id": "AAAAAAFxsmfRxWQ14Wc=",
-							"_parent": {
-								"$ref": "AAAAAAFF+qBtyKM79qY="
-							},
-							"font": "Arial;13;0",
-							"left": 896,
-							"top": 488,
-							"width": 305,
-							"height": 121,
-							"text": "The Register Class serves the Customer and the Lesson Classes. It is used to help find out which customers are attending which lessons in the gym."
-						},
-						{
-							"_type": "UMLTextView",
-							"_id": "AAAAAAFxsmpUVmSbcus=",
-							"_parent": {
-								"$ref": "AAAAAAFF+qBtyKM79qY="
-							},
-							"font": "Arial;13;0",
-							"left": 520,
-							"top": 504,
-							"width": 245.86083984375,
-							"height": 81,
-							"text": "Every attribute in every Class has a getter method for it. In this case using Ruby's attr_reader(). I didn't want to list ever single one in the operations to avoid the diagrams getting to bloated."
 						}
 					]
 				},
@@ -2014,18 +2179,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFxp7l17EpIeZs="
 							},
-							"name": "update_customer",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFxp76vCksJauU=",
-									"_parent": {
-										"$ref": "AAAAAAFxp75TwksC0d8="
-									},
-									"name": "id",
-									"type": ""
-								}
-							]
+							"name": "update_customer"
 						},
 						{
 							"_type": "UMLOperation",
@@ -2078,6 +2232,42 @@
 									"type": ""
 								}
 							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFxvEB9G4Zi4v8=",
+							"_parent": {
+								"$ref": "AAAAAAFxp7l17EpIeZs="
+							},
+							"name": "pretty_name",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFxvECs14aZmjc=",
+									"_parent": {
+										"$ref": "AAAAAAFxvEB9G4Zi4v8="
+									},
+									"name": "first_name",
+									"type": ""
+								},
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFxvECs14aajHg=",
+									"_parent": {
+										"$ref": "AAAAAAFxvEB9G4Zi4v8="
+									},
+									"name": "last_name",
+									"type": ""
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFxvEglq4qPGgI=",
+							"_parent": {
+								"$ref": "AAAAAAFxp7l17EpIeZs="
+							},
+							"name": "high_spenders"
 						}
 					]
 				},
@@ -2246,18 +2436,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFxp7pkC0qVfU8="
 							},
-							"name": "show_lesson_customers",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFxp899nFRNBv8=",
-									"_parent": {
-										"$ref": "AAAAAAFxp885+lQE3Hk="
-									},
-									"name": "id",
-									"type": ""
-								}
-							]
+							"name": "update_lesson"
 						},
 						{
 							"_type": "UMLOperation",
@@ -2292,8 +2471,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFxq0QVsw9ttag="
 									},
-									"name": "first_name",
-									"type": ""
+									"name": "instructor_first_name"
 								},
 								{
 									"_type": "UMLParameter",
@@ -2301,8 +2479,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFxq0QVsw9ttag="
 									},
-									"name": "last_name",
-									"type": ""
+									"name": "instructor_last_name"
 								}
 							]
 						},
@@ -2312,18 +2489,23 @@
 							"_parent": {
 								"$ref": "AAAAAAFxp7pkC0qVfU8="
 							},
-							"name": "show_active_lessons",
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFxq534c7Q+yGE=",
-									"_parent": {
-										"$ref": "AAAAAAFxq52dy7QHmhE="
-									},
-									"name": "active",
-									"type": ""
-								}
-							]
+							"name": "show_active_lessons"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFxvEcN/ooJbrQ=",
+							"_parent": {
+								"$ref": "AAAAAAFxp7pkC0qVfU8="
+							},
+							"name": "expensive"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFxvEconIpMUaU=",
+							"_parent": {
+								"$ref": "AAAAAAFxp7pkC0qVfU8="
+							},
+							"name": "cheap"
 						}
 					]
 				},
@@ -2416,6 +2598,73 @@
 								"$ref": "AAAAAAFxp8CR7Es6O+I="
 							},
 							"name": "register_customer"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFxvEEngob5RWs=",
+							"_parent": {
+								"$ref": "AAAAAAFxp8CR7Es6O+I="
+							},
+							"name": "customer"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFxvEFg0YdOSfk=",
+							"_parent": {
+								"$ref": "AAAAAAFxp8CR7Es6O+I="
+							},
+							"name": "lesson"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFxvEOE7oh823c=",
+							"_parent": {
+								"$ref": "AAAAAAFxp8CR7Es6O+I="
+							},
+							"name": "show_registers"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFxvEP1fYjRxV4=",
+							"_parent": {
+								"$ref": "AAAAAAFxp8CR7Es6O+I="
+							},
+							"name": "show_register",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFxvEQefokIO9A=",
+									"_parent": {
+										"$ref": "AAAAAAFxvEP1fYjRxV4="
+									},
+									"name": "id",
+									"type": ""
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFxvEQe7okclMQ=",
+							"_parent": {
+								"$ref": "AAAAAAFxp8CR7Es6O+I="
+							},
+							"name": "update_register"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFxvERE+IlNph8=",
+							"_parent": {
+								"$ref": "AAAAAAFxp8CR7Es6O+I="
+							},
+							"name": "create_register"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFxvESTD4m0Omw=",
+							"_parent": {
+								"$ref": "AAAAAAFxp8CR7Es6O+I="
+							},
+							"name": "delete_register"
 						}
 					]
 				},
