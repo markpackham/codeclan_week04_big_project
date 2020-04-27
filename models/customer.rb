@@ -74,6 +74,12 @@ class Customer
     return Customer.new(results.first)
   end
 
+  def self.high_spenders()
+    sql = "SELECT * FROM customers ORDER by price DESC LIMIT 3;"
+    results = SqlRunner.run(sql)
+    return results.map { |hash| Customer.new(hash) }
+  end
+
   def pretty_name()
     return "#{@first_name.capitalize} #{@last_name.capitalize}"
   end

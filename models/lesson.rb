@@ -107,7 +107,11 @@ class Lesson
     return Lesson.new(results.first)
   end
 
-  def lesson_customers()
+  def self.find_day(day)
+    sql = "SELECT * FROM lessons WHERE week_day = $1;"
+    values = [day]
+    results = SqlRunner.run(sql)
+    return results.map { |hash| Lesson.new(hash) }
   end
 
   def lesson_class_size()

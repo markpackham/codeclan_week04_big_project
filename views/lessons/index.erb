@@ -1,13 +1,17 @@
 <h1>Lessons</h1>
 <div class="content">
-  <h2>Active Lessons</h2>
-  <% for lesson in @lessons %>
-    <% if lesson.active == 't' %>
-      <br>
-      <a href="/lessons/<%= lesson.id %>"><%= lesson.name.capitalize %></a>
-      <br>
-      Teacher: <%= lesson.pretty_name() %>
-      <br>
+  <h2>Active Lessons and their Week Days</h2>
+  <% for wk_day in ["Monday","Tuesday","Wednesday","Thursday","Friday"] %>
+    <h3><%= wk_day %></h3>
+    <% for lesson in @lessons %>
+      <% if lesson.active == 't' && lesson.week_day ==  wk_day%>
+        <a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a>
+        <br>
+        Teacher: <%= lesson.pretty_name() %>
+        <br>
+        Max Capacity: <%= lesson.max_capacity %>
+        <br>
+      <% end %>
     <% end %>
   <% end %>
   <br>
@@ -21,7 +25,7 @@
     Teacher: <%= lesson.pretty_name() %>
     <br>
   <% end %>
-    <h2>Dearest 3 Lessons</h2>
+  <h2>Most Expensive 3 Lessons</h2>
   <% for lesson in @lessons_expensive %>
     <br>
     <a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a>
@@ -31,7 +35,7 @@
     Teacher: <%= lesson.pretty_name() %>
     <br>
   <% end %>
-      <h2>Cheapest 3 Lessons</h2>
+  <h2>Cheapest 3 Lessons</h2>
   <% for lesson in @lessons_cheap %>
     <br>
     <a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a>
@@ -40,5 +44,13 @@
     <br>
     Teacher: <%= lesson.pretty_name() %>
     <br>
+  <% end %>
+  <h2>Lessons Fully Booked</h2>
+  <% for lesson in @lessons %>
+    <% if lesson.max_capacity < 1 %>
+      <br>
+      <a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a>
+      <br>
+    <% end %>
   <% end %>
 </div>
