@@ -1,0 +1,8 @@
+<h1>Edit Customer Lesson</h1>
+<form method="POST" action="/customers-lessons/<%= @customer_lesson.id %>">
+  <label for="customer-id">Customer Id:</label>
+  <input type="text" name="customer_id" id="customer-id" value=<%= @customer_lesson.customer_id %>>
+    <label for="lesson-id">Lesson Id:</label>
+  <input type="text" name="customer_id" id="customer-lesson-id" value=<%= @customer_lesson.lesson_id %>>
+<input type="submit" value="Update"/>
+</form>

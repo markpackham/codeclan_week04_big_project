@@ -1,0 +1,12 @@
+<h1>Customer Lesson</h1>
+Name: <%= @customer_lesson.id %>
+<br>
+Customer Id: <%= @customer_lesson.customer_id %>
+<br >
+Lesson Id: <%= @customer_lesson.lesson_id %>
+<br>
+<a href="/customers-lessons/<%= @customer_lesson.id %>/edit">Edit</a>
+<br>
+<form method="post" action="/customers-lessons/<%= @customer_lesson.id %>/delete">
+  <input type="submit" value="Delete"/>
+</form>

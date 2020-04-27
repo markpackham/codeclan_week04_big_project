@@ -22,8 +22,8 @@ get "/customers-lessons/:id" do
 end
 
 post "/customers-lessons" do
-  @customers-lessons = Customer_Lesson.new(params)
-  @customers-lessons.save()
+  @customers_lessons = Customer_Lesson.new(params)
+  @customers_lessons.save()
   redirect to("/customers-lessons")
 end
 

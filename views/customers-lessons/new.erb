@@ -1,22 +1,22 @@
 <h1>Add A Customer For A Lesson</h1>
 <div class="content">
-  <form action="/customers_lessons" method="post">
+  <form action="/customers-lessons" method="post">
     <label for="select-lesson">
       Select a Lesson:
       <select id="select-lesson" name="lesson_id">
-        <% for lesson in @lessons %>
-          <option value="<%= lesson.id %>"><%= lesson.name %></option>
+        <% for les in @lesson %>
+          <option value="<%= les.id %>"><%= les.name %></option>
         <% end %>
       </select>
     </label>
     <label for="select-customer">
-      Select a Lesson:
+      Select a Customer:
       <select id="select-customer" name="customer_id">
-        <% for customer in @customers %>
-          <option value="<%= customer.id %>"><%= customer.pretty_name %></option>
+        <% for cus in @customer %>
+          <option value="<%= cus.id %>"><%= cus.pretty_name %></option>
         <% end %>
       </select>
     </label>
-    <input class="btn btn--action" type='submit' value="Submit">
+    <input class="btn btn--action" type='submit' value="Connect Customer To Lesson">
   </form>
 </div>

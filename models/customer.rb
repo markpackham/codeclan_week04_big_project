@@ -27,8 +27,7 @@ class Customer
     RETURNING id"
     values = [@first_name, @last_name, @phone, @funds]
     result = SqlRunner.run(sql, values)
-    id = result.first["id"]
-    @id = id
+    @id = results.first()["id"].to_i
   end
 
   def update()

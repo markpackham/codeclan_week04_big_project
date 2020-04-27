@@ -38,8 +38,7 @@ class Lesson
     RETURNING id"
     values = [@name, @first_name, @last_name, @phone, @week_day, @price, @max_capacity, @active]
     result = SqlRunner.run(sql, values)
-    id = result.first["id"]
-    @id = id
+    @id = results.first()["id"].to_i
   end
 
   def update()
@@ -70,9 +69,9 @@ class Lesson
 
   def self.delete(id)
     sql = "DELETE FROM lessons
-    WHERE id = $1";
+    WHERE id = $1"
     values = [id]
-    SqlRunner.run( sql, values )
+    SqlRunner.run(sql, values)
   end
 
   def self.all()
