@@ -80,6 +80,18 @@ class Lesson
     return results.map { |hash| Lesson.new(hash) }
   end
 
+  def self.expensive()
+    sql = "SELECT * FROM lessons ORDER BY price DESC LIMIT 3;"
+    results = SqlRunner.run(sql)
+    return results.map { |hash| Lesson.new(hash) }
+  end
+
+  def self.cheap()
+    sql = "SELECT * FROM lessons ORDER BY price ASC LIMIT 3;"
+    results = SqlRunner.run(sql)
+    return results.map { |hash| Lesson.new(hash) }
+  end
+
   def self.all_active()
     sql = "SELECT * FROM lessons WHERE active = true;"
     results = SqlRunner.run(sql)

@@ -68,7 +68,7 @@ class Customer_Lesson
   end
 
   def customer()
-    sql = "SELECT * FROM customer
+    sql = "SELECT * FROM customers
     WHERE id = $1;"
     values = [@customer_id]
     results = SqlRunner.run(sql, values)
@@ -76,7 +76,7 @@ class Customer_Lesson
   end
 
   def lesson()
-    sql = "SELECT * FROM lesson
+    sql = "SELECT * FROM lessons
     WHERE id = $1;"
     values = [@lesson_id]
     results = SqlRunner.run(sql, values)
