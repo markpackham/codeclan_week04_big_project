@@ -75,7 +75,7 @@ class Customer
   end
 
   def self.high_spenders()
-    sql = "SELECT * FROM customers ORDER by price DESC LIMIT 3;"
+    sql = "SELECT * FROM customers ORDER by funds DESC LIMIT 3;"
     results = SqlRunner.run(sql)
     return results.map { |hash| Customer.new(hash) }
   end

@@ -4,4 +4,12 @@
   <a href="/customers/<%= customer.id %>"> <%= customer.pretty_name() %></a> - Unique ID: <%= customer.id %>
   <br>
   <% end %>
+
+<h2>Top 3 Spenders</h2>
+  <% for spender in @high_spenders %>
+    <br>
+    <a href="/lessons/<%= spender.id %>"><%= spender.pretty_name() %></a>
+    <br>
+    Funds: <%= spender.funds %>
+  <% end %>
 </div>

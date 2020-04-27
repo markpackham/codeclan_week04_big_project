@@ -1,15 +1,15 @@
 <h1>Customers Associated With A Lesson</h1>
 <div class="content">
   <ul>
-    <% for les in @lesson%>
+    <% for lesson in @lessons%>
       <p>
-        <h3><a target="_blank" href="/lessons/<%= les.id %>"><%= les.name %></a></h3>
-        <% for c_l in @customer_lesson %>
-          <% if les.id == c_l.lesson_id %>
+        <h3><a target="_blank" href="/lessons/<%= lesson.id %>"><%= lesson.name %></a></h3>
+        <% for customer_lesson in @customers_lessons %>
+          <% if lesson.id == customer_lesson.lesson_id %>
             <p>
-              <a target="_blank" href="/customers/<%= c_l.customer.id %>"><%= c_l.customer.pretty_name %></a>
+              <a target="_blank" href="/customers/<%= customer_lesson.customer.id %>"><%= customer_lesson.customer.pretty_name %></a>
             </p>
-            <form action="/customers-lessons/<%= c_l.id %>/delete" method="POST">
+            <form action="/customers-lessons/<%= customer_lesson.id %>/delete" method="POST">
               <input class="delete-btn" type="submit" value="Delete Associaton" />
             </form>
           <% end %>

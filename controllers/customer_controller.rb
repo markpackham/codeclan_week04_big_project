@@ -5,6 +5,7 @@ also_reload("../models/*")
 
 get "/customers" do
   @customers = Customer.all()
+  @high_spenders = Customer.high_spenders()
   erb(:"customers/index")
 end
 
