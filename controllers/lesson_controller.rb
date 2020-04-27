@@ -32,7 +32,7 @@ end
 
 post "/lessons/:id" do
   lesson = Lesson.new(params)
-  lesson.update
+  lesson.update()
   redirect to "/lessons/#{params["id"]}"
 end
 

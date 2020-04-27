@@ -1,6 +1,6 @@
 require_relative("../db/sql_runner")
 
-class Register
+class Customer_Lesson
   attr_accessor(:customer_id, :lesson_id)
   attr_reader(:id)
 
@@ -11,7 +11,7 @@ class Register
   end
 
   def save()
-    sql = "INSERT INTO registers
+    sql = "INSERT INTO customers_lessons
     (
       customer_id,
       lesson_id
@@ -28,7 +28,7 @@ class Register
   end
 
   def update()
-    sql = "UPDATE registers SET
+    sql = "UPDATE customers_lessons SET
     (
       customer_id,
       lesson_id
@@ -43,29 +43,45 @@ class Register
   end
 
   def self.delete_all
-    sql = "DELETE FROM registers;"
+    sql = "DELETE FROM customers_lessons;"
     SqlRunner.run(sql)
   end
 
   def self.delete(id)
-    sql = "DELETE FROM registers
+    sql = "DELETE FROM customers_lessons
     WHERE id = $1"
     values = [id]
     SqlRunner.run(sql, values)
   end
 
   def self.all()
-    sql = "SELECT * FROM registers;"
+    sql = "SELECT * FROM customers_lessons;"
     results = SqlRunner.run(sql)
-    return results.map { |hash| Register.new(hash) }
+    return results.map { |hash| Customer_Lesson.new(hash) }
   end
 
   def self.find(id)
-    sql = "SELECT * FROM registers
+    sql = "SELECT * FROM customers_lessons
     WHERE id = $1;"
     values = [id]
     results = SqlRunner.run(sql, values)
-    return Register.new(results.first)
+    return Customer_Lesson.new(results.first)
+  end
+
+  def customer()
+    sql = "SELECT * FROM customer
+    WHERE id = $1;"
+    values = [@customer_id]
+    results = SqlRunner.run(sql, values)
+    return Customer.new(results.first)
+  end
+
+  def lesson()
+    sql = "SELECT * FROM lesson
+    WHERE id = $1;"
+    values = [@lesson_id]
+    results = SqlRunner.run(sql, values)
+    return Lesson.new(results.first)
   end
 
   def register_customer()
@@ -74,7 +90,7 @@ class Register
     # check if lesson already full
   end
 
-  def self.map_items(register_data)
-    return register_data.map { |register| Register.new(register) }
+  def self.map_items(customer_lesson_data)
+    return customer_lesson_data.map { |customer_lesson| Customer_Lesson.new(customer_lesson) }
   end
 end

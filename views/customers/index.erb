@@ -1,7 +1,7 @@
 <h1>Customers</h1>
 <div class="content">
   <% @customers.each do |customer| %>
-  <a href="/customers/<%= customer.id %>"><%= customer.pretty_name() %></a>
+  <a href="/customers/<%= customer.id %>"> <%= customer.pretty_name() %></a> - Unique ID: <%= customer.id %>
   <br>
   <% end %>
 </div>

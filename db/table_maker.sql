@@ -1,4 +1,4 @@
-DROP TABLE registers;
+DROP TABLE customers_lessons;
 
 DROP TABLE customers;
 
@@ -24,8 +24,8 @@ CREATE TABLE lessons (
   active BOOLEAN DEFAULT true
 );
 
-CREATE TABLE registers (
+CREATE TABLE customers_lessons (
   id SERIAL PRIMARY KEY,
   customer_id INT REFERENCES customers(id) ON DELETE CASCADE,
-  lessons_id INT REFERENCES lessons(id) ON DELETE CASCADE
+  lesson_id INT REFERENCES lessons(id) ON DELETE CASCADE
 );

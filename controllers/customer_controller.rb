@@ -32,7 +32,7 @@ end
 
 post "/customers/:id" do
   customer = Customer.new(params)
-  customer.update
+  customer.update()
   redirect to "/customers/#{params["id"]}"
 end
 

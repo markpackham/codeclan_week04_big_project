@@ -1,0 +1,10 @@
+<h1>Customers Associated With A Lesson</h1>
+<div class="content">
+<ul>
+  <% for c_l in @customer_lesson %>
+  <li>
+  <p>Customer Lesson ID: <%= c_l.id %> Customer ID: <%= c_l.customer_id %> Lesson ID: <%= c_l.lesson_id %> </p>
+  </li>
+  <% end %>
+</ul>
+</div>
