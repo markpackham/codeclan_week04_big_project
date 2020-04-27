@@ -38,7 +38,8 @@ class Lesson
     RETURNING id"
     values = [@name, @first_name, @last_name, @phone, @week_day, @price, @max_capacity, @active]
     result = SqlRunner.run(sql, values)
-    @id = results.first()["id"].to_i
+    id = result.first["id"]
+    @id = id
   end
 
   def update()

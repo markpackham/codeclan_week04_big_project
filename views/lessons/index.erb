@@ -21,4 +21,24 @@
     Teacher: <%= lesson.pretty_name() %>
     <br>
   <% end %>
+    <h2>Dearest 3 Lessons</h2>
+  <% for lesson in @lessons_expensive %>
+    <br>
+    <a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a>
+    <br>
+    Lesson Price: <%= lesson.price %>
+    <br>
+    Teacher: <%= lesson.pretty_name() %>
+    <br>
+  <% end %>
+      <h2>Cheapest 3 Lessons</h2>
+  <% for lesson in @lessons_cheap %>
+    <br>
+    <a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a>
+    <br>
+    Lesson Price: <%= lesson.price %>
+    <br>
+    Teacher: <%= lesson.pretty_name() %>
+    <br>
+  <% end %>
 </div>

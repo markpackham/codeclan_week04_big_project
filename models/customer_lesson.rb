@@ -23,7 +23,8 @@ class Customer_Lesson
     RETURNING id"
     values = [@customer_id, @lesson_id]
     result = SqlRunner.run(sql, values)
-    @id = results.first()["id"].to_i
+    id = result.first["id"]
+    @id = id
   end
 
   def update()
@@ -81,12 +82,6 @@ class Customer_Lesson
     values = [@lesson_id]
     results = SqlRunner.run(sql, values)
     return Lesson.new(results.first)
-  end
-
-  def register_customer()
-    # check if lesson active
-    # check if customer can afford
-    # check if lesson already full
   end
 
   def self.map_items(customer_lesson_data)

@@ -5,6 +5,8 @@ also_reload("../models/*")
 
 get "/lessons" do
   @lessons = Lesson.all()
+  @lessons_cheap = Lesson.cheap()
+  @lessons_expensive = Lesson.expensive()
   erb (:"lessons/index")
 end
 
