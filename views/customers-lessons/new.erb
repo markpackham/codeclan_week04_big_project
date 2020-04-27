@@ -5,8 +5,8 @@
       Select a Lesson:
       <select id="select-lesson" name="lesson_id">
         <% for les in @lesson %>
-          <% if les.active != 'f'%>
-            <option value="<%= les.id %>"><%= les.name %></option>
+          <% if les.active != 'f' && les.max_capacity > 0%>
+            <option value="<%= les.id %>"><%= les.name %> - Spaces avaialble - <%= les.max_capacity %></option>
           <% end %>
         <% end %>
       </select>

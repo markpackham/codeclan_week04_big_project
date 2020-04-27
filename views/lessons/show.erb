@@ -1,19 +1,21 @@
 <h1>Lesson</h1>
 <div class="content">
-<%= @lesson.name.capitalize %>
-<br>
-Teach Name: <%= @lesson.pretty_name() %>
-<br>
-Phone: <%= @lesson.phone %>
-<br >
-Lesson Price: <%= @lesson.price %>
-<br>
-Week Day of Lesson: <%= @lesson.week_day%>
-<br>
-Max Capacity: <% @lesson.max_capacity%>
-<br>
-Class Available: <%= @lesson.active %>
-<br>
-<a href="/lessons/<%= @lesson.id %>/edit">Edit</a>
-<form action="/lessons/<%= @lesson.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
+  <%= @lesson.name.capitalize %>
+  <br>
+  Teach Name: <%= @lesson.pretty_name() %>
+  <br>
+  Phone: <%= @lesson.phone %>
+  <br >
+  Lesson Price: <%= @lesson.price %>
+  <br>
+  Week Day of Lesson: <%= @lesson.week_day%>
+  <br>
+  Max Capacity: <%= @lesson.max_capacity%>
+  <br>
+  Class Available: <%= @lesson.active %>
+  <br>
+  <a href="/lessons/<%= @lesson.id %>/edit">Edit</a>
+  <form action="/lessons/<%= @lesson.id %>/delete" method="POST">
+    <input class="delete-btn" type="submit" value="Delete">
+  </form>
 </div>

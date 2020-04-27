@@ -2,6 +2,8 @@
   --primary-color: rgb(173, 168, 168);
   --secondary-color: rgb(140, 187, 140);
   --background-color: rgb(5, 5, 129);
+  --danger-background-color:rgb(252, 252, 252);
+  --danger-foreground-color: rgb(114, 9, 14);
 }
 
 body {
@@ -37,10 +39,17 @@ ul {
   list-style: none;
 }
 li {
+  margin: 0.5rem 0;
+}
+label, input{
   margin: 0.5rem;
 }
 .content{
   margin: 1rem;
+}
+.delete-btn{
+background-color: var(--danger-background-color);
+color: var(--danger-foreground-color);
 }
 /*
 Small Screens
