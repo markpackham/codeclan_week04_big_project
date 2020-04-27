@@ -1,17 +1,21 @@
 <h1>Customers Associated With A Lesson</h1>
 <div class="content">
   <ul>
-    <% for c_l in @customer_lesson %>
-      <li>
-        <p><a href="/customers-lessons/<%= c_l.id %>">Customer-Lesson ID: <%= c_l.id %> Customer ID: <%= c_l.customer_id %> Lesson ID: <%= c_l.lesson_id %></a> </p>
-        <p> <%= c_l.customer.pretty_name %> - <%= c_l.lesson.name %> </p>
-        <p>
-          <form action="/customers-lessons/<%= c_l.id %>/delete" method="POST">
-            <input type="submit" value="delete" />
-          </form>
-        </p>
-      </li>
+    <% for les in @lesson%>
+      <p>
+        <h3><%= les.name %></h3>
+        <% for c_l in @customer_lesson %>
+          <% if les.id == c_l.lesson_id %>
+            <p>
+              <%= c_l.customer.pretty_name %>
+            </p>
+                          <form action="/customers-lessons/<%= c_l.id %>/delete" method="POST">
+                <input type="submit" value="delete" />
+              </form>
+          <% end %>
+        <% end %>
+      </p>
+      <br>
     <% end %>
   </ul>
 </div>
-
