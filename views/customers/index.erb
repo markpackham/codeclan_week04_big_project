@@ -1,15 +1,18 @@
 <h1>Customers</h1>
+<div class="flex-container">
+<div class="container">
 <div class="content">
+<h2>All Customers</h2>
   <% @customers.each do |customer| %>
   <a href="/customers/<%= customer.id %>"> <%= customer.pretty_name() %></a> - Unique ID: <%= customer.id %>
   <br>
   <% end %>
-
+  </div>
+<div class="container">
 <h2>Top 3 Spenders</h2>
   <% for spender in @high_spenders %>
+      <a href="/lessons/<%= spender.id %>"><%= spender.pretty_name() %></a> Funds: £<%= spender.funds %>
     <br>
-    <a href="/lessons/<%= spender.id %>"><%= spender.pretty_name() %></a>
-    <br>
-    Funds: £<%= spender.funds %>
   <% end %>
+</div>
 </div>

@@ -2,7 +2,7 @@
   --primary-color: rgb(173, 168, 168);
   --secondary-color: rgb(140, 187, 140);
   --background-color: rgb(5, 5, 129);
-  --danger-background-color:rgb(252, 252, 252);
+  --danger-background-color: rgb(252, 252, 252);
   --danger-foreground-color: rgb(114, 9, 14);
 }
 
@@ -17,14 +17,16 @@ body {
 
 nav {
 }
-footer{
-  margin-left: 1rem;
+footer {
+  margin-left: 46%;
+  position: fixed;
+  bottom: 0;
 }
 h1 {
   text-align: center;
   font-size: 2rem;
 }
-h2{
+h2 {
   margin-bottom: 1rem;
 }
 p {
@@ -41,18 +43,31 @@ ul {
 li {
   margin: 0.5rem 0;
 }
-label, input{
+label,
+input {
   margin: 0.5rem;
 }
-.content{
+.content {
   margin: 1rem;
+  border: thick;
 }
-.delete-btn{
-background-color: var(--danger-background-color);
-color: var(--danger-foreground-color);
+.delete-btn {
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.container {
+  width: 250;
+  margin: 2rem;
+  text-align: center;
 }
 /*
 Small Screens
 */
 @media (max-height: 600px) {
+  .lesson {
+    width: 100%;
+  }
 }
