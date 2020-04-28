@@ -1,5 +1,6 @@
 # Week 4 Project
 
+## CRUD Gym
 
 This is a gym recording keeping system intended for a gym owner to create customers and lessons then allocate customers to lessons.
 
@@ -21,7 +22,7 @@ createdb week4_project
 
 Then run the table creating script
 ```
-psql -d week4_project db/table_maker.sql
+psql -d week4_project -f db/table_maker.sql
 ```
 
 Run the following in the terminal and visit the browser at localhost:4567
