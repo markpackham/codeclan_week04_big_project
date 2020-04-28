@@ -6,7 +6,7 @@
       <select id="select-lesson" name="lesson_id">
         <% for les in @lesson %>
           <% if les.active != 'f' && les.max_capacity > 0%>
-            <option value="<%= les.id %>"><%= les.name %> - Spaces avaialble - <%= les.max_capacity %></option>
+            <option value="<%= les.id %>"><%= les.name %> - Spaces avaialble:∏ <%= les.max_capacity %></option>
           <% end %>
         <% end %>
       </select>
@@ -15,7 +15,9 @@
       Select a Customer:
       <select id="select-customer" name="customer_id">
         <% for cus in @customer %>
-          <option value="<%= cus.id %>"><%= cus.pretty_name %></option>
+        <% if cus.funds > 0%>
+          <option value="<%= cus.id %>"><%= cus.pretty_name %> - Funds: £<%= cus.funds %></option>
+          <% end %>
         <% end %>
       </select>
     </label>
