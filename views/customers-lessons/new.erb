@@ -4,9 +4,9 @@
     <label for="select-lesson">
       Select a Lesson:
       <select id="select-lesson" name="lesson_id">
-        <% for les in @lesson %>
-          <% if les.active != 'f' && les.max_capacity > 0%>
-            <option value="<%= les.id %>"><%= les.name %> - Spaces avaialble:∏ <%= les.max_capacity %></option>
+        <% for lesson in @lessons %>
+          <% if lesson.active != 'f' && lesson.max_capacity > 0%>
+            <option value="<%= lesson.id %>"><%= lesson.name %> - Spaces avaialble: <%= lesson.max_capacity %></option>
           <% end %>
         <% end %>
       </select>
@@ -14,9 +14,9 @@
     <label for="select-customer">
       Select a Customer:
       <select id="select-customer" name="customer_id">
-        <% for cus in @customer %>
-        <% if cus.funds > 0%>
-          <option value="<%= cus.id %>"><%= cus.pretty_name %> - Funds: £<%= cus.funds %></option>
+        <% for customer in @customers %>
+        <% if customer.funds > 0%>
+          <option value="<%= customer.id %>"><%= customer.pretty_name %> - Funds: £<%= customer.funds %></option>
           <% end %>
         <% end %>
       </select>

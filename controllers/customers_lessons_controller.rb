@@ -13,8 +13,8 @@ get "/customers-lessons" do
 end
 
 get "/customers-lessons/new" do
-  @customer = Customer.all()
-  @lesson = Lesson.all()
+  @customers = Customer.all()
+  @lessons = Lesson.all()
   erb(:"customers-lessons/new")
 end
 

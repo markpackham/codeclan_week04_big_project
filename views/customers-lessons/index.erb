@@ -3,7 +3,7 @@
   <div class="flex-container">
   <ul>
     <% for lesson in @lessons%>
-    <div class="container">
+    <div class="container-block">
         <h3><a target="_blank" href="/lessons/<%= lesson.id %>"><%= lesson.name %></a></h3>
         <% for customer_lesson in @customers_lessons %>
           <% if lesson.id == customer_lesson.lesson_id %>
