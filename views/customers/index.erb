@@ -3,6 +3,7 @@
 <div class="container">
 <div class="content">
 <h2>All Customers</h2>
+  <p>You currently have <%= @customers.length%> customers.</p>
   <% @customers.each do |customer| %>
   <a href="/customers/<%= customer.id %>"> <%= customer.pretty_name() %></a> - Unique ID: <%= customer.id %>
   <br>
@@ -14,5 +15,9 @@
       <a href="/lessons/<%= spender.id %>"><%= spender.pretty_name() %></a> Funds: £<%= spender.funds %>
     <br>
   <% end %>
+  <br>
+  The average customer's funds are: £<%= @average_funds %>
+  <br>
+  All the customers' funds combined come to £<%= @sum_funds %>
 </div>
 </div>

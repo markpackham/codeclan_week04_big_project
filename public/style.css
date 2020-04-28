@@ -17,8 +17,6 @@ body {
   background-color: var(--background-color);
 }
 
-nav {
-}
 footer {
   margin-left: 46%;
   position: fixed;
@@ -97,8 +95,22 @@ form input.delete-btn:hover {
 /*
 Small Screens
 */
-@media (max-height: 600px) {
-  .lesson {
+@media (max-height: 640px) {
+  nav{
+    text-align: center;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container,
+  .container-block {
     width: 100%;
+  }
+
+  input{
+    width: 80%;
   }
 }

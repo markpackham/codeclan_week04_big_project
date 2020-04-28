@@ -9,7 +9,7 @@ class Customer
     @first_name = options["first_name"]
     @last_name = options["last_name"]
     @phone = options["phone"]
-    @funds = options["funds"].to_f
+    @funds = options["funds"].to_f.round(2)
   end
 
   def save()
@@ -72,6 +72,18 @@ class Customer
     values = [id]
     results = SqlRunner.run(sql, values)
     return Customer.new(results.first)
+  end
+
+  def self.average_funds()
+    sql = "SELECT AVG(customers.funds) FROM customers;"
+    results = SqlRunner.run(sql)
+    return results[0]["avg"].to_f.round(2)
+  end
+
+  def self.sum_funds()
+    sql = "SELECT SUM(customers.funds) FROM customers;"
+    results = SqlRunner.run(sql)
+    return results[0]["sum"].to_f.round(2)
   end
 
   def self.high_spenders()

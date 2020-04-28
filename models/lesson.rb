@@ -13,7 +13,7 @@ class Lesson
     @last_name = options["last_name"]
     @phone = options["phone"]
     @week_day = options["week_day"]
-    @price = options["price"].to_f
+    @price = options["price"].to_f.round(2)
     @max_capacity = options["max_capacity"].to_i
     # is the lesson still available/active
     @active = options["active"]
@@ -91,6 +91,12 @@ class Lesson
     sql = "SELECT * FROM lessons ORDER BY price ASC LIMIT 3;"
     results = SqlRunner.run(sql)
     return results.map { |hash| Lesson.new(hash) }
+  end
+
+  def self.average_price()
+    sql = "SELECT AVG(lessons.price) FROM lessons;"
+    results = SqlRunner.run(sql)
+    return results[0]["avg"].to_f.round(2)
   end
 
   def self.all_active()

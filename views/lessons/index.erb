@@ -20,6 +20,7 @@
     </div>
     <div class="container">
       <h2>All Lessons</h2>
+      <p>The gym has offered a total of <%= @lessons.length%> lessons through its life.</p>
       <% for lesson in @lessons %>
         <br>
         <a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a>
@@ -46,6 +47,8 @@
         Teacher: <%= lesson.pretty_name() %>
         <br>
       <% end %>
+      <br>
+      Average price for a lesson: £<%= @average_price %>
     </div>
     <div class="container">
       <h2>Cheapest 3 Lessons</h2>
@@ -58,7 +61,6 @@
         Teacher: <%= lesson.pretty_name() %>
         <br>
       <% end %>
-      <div>
         <div class="container">
           <h2>Lessons Fully Booked</h2>
           <% for lesson in @lessons %>
