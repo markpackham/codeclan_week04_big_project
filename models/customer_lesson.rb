@@ -90,8 +90,6 @@ class Customer_Lesson
         GROUP BY customers_lessons.lesson_id
         ORDER BY COUNT(customers_lessons.customer_id) DESC;"
     results = SqlRunner.run(sql)
-    puts "Hello World"
-    puts results
     return results.map { |hash| Customer_Lesson.new(hash) }
   end
 
