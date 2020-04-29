@@ -1,23 +1,23 @@
 <h1>Customers Associated With A Lesson</h1>
 <div class="content">
   <div class="flex-container">
-  <ul>
-    <% for lesson in @lessons%>
-    <div class="container-block">
-        <h3><a target="_blank" href="/lessons/<%= lesson.id %>"><%= lesson.name %></a></h3>
-        <% for customer_lesson in @customers_lessons %>
-          <% if lesson.id == customer_lesson.lesson_id %>
-            <p>
-              <a target="_blank" href="/customers/<%= customer_lesson.customer.id %>"><%= customer_lesson.customer.pretty_name %></a>
-            </p>
-            <form action="/customers-lessons/<%= customer_lesson.id %>/delete" method="POST">
-              <input class="delete-btn" type="submit" value="Delete Associaton" />
-            </form>
+    <ul>
+      <% for lesson in @lessons%>
+        <div class="container-block">
+          <h3><a target="_blank" href="/lessons/<%= lesson.id %>"><%= lesson.name %></a></h3>
+          <% for customer_lesson in @customers_lessons %>
+            <% if lesson.id == customer_lesson.lesson_id %>
+              <p>
+                <a target="_blank" href="/customers/<%= customer_lesson.customer.id %>"><%= customer_lesson.customer.pretty_name %></a>
+              </p>
+              <form action="/customers-lessons/<%= customer_lesson.id %>/delete" method="POST">
+                <input class="delete-btn" type="submit" value="Delete Association" />
+              </form>
+            <% end %>
           <% end %>
-        <% end %>
-      <br>
-       </div>
-    <% end %>
-  </ul>
-</div>
+          <br>
+        </div>
+      <% end %>
+    </ul>
+  </div>
 </div>

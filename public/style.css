@@ -31,27 +31,38 @@ h1 {
   padding: 0.5rem;
   background-color: var(--footer-background-color);
 }
+
 h2 {
   margin-bottom: 1rem;
 }
+
 p {
   margin: 0.5rem 0;
 }
+
 a,
 a:hover {
   color: var(--secondary-color);
   text-decoration: none;
 }
+
 ul {
   list-style: none;
 }
+
+.homepage ul{
+  list-style: circle;
+}
+
 li {
   margin: 0.5rem 0;
 }
+
 label,
 input {
   margin: 0.5rem;
 }
+
 .content {
   margin: 1rem;
   border: thick;
@@ -97,12 +108,25 @@ form input.delete-btn:hover {
 .container-block {
   display: inline-block;
 }
+
+.homepage {
+  margin-left: 3rem;
+}
 /*
 Small Screens
 */
 @media (max-height: 640px) {
   nav {
     text-align: center;
+  }
+
+  input {
+    width: 80%;
+  }
+
+  footer {
+    margin: 0;
+    position: relative;
   }
 
   .flex-container {
@@ -115,7 +139,8 @@ Small Screens
     width: 100%;
   }
 
-  input {
-    width: 80%;
+  .homepage {
+    margin: 0;
+    padding: 0.5rem;
   }
 }

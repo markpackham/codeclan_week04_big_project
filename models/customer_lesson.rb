@@ -84,7 +84,18 @@ class Customer_Lesson
     return Lesson.new(results.first)
   end
 
-  def charge_customer(customer,lesson)
+  def self.lesson_numbers()
+    sql = "SELECT COUNT(customers_lessons.customer_id), customers_lessons.lesson_id
+        FROM customers_lessons
+        GROUP BY customers_lessons.lesson_id
+        ORDER BY COUNT(customers_lessons.customer_id) DESC;"
+    results = SqlRunner.run(sql)
+    puts "Hello World"
+    puts results
+    return results.map { |hash| Customer_Lesson.new(hash) }
+  end
+
+  def charge_customer(customer, lesson)
     customer.funds = customer.funds - lesson.price
   end
 
