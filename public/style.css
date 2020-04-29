@@ -1,6 +1,7 @@
 :root {
   --primary-color: rgb(173, 168, 168);
   --secondary-color: rgb(140, 187, 140);
+  --third-color: rgb(119, 172, 119);
   --background-color: rgb(5, 5, 129);
   --edit-background-color: rgb(4, 41, 19);
   --edit-foreground-color: rgb(252, 252, 252);
@@ -40,17 +41,21 @@ p {
   margin: 0.5rem 0;
 }
 
-a,
-a:hover {
+a {
   color: var(--secondary-color);
   text-decoration: none;
+}
+
+a:hover{
+  font-size: 1.1rem;
+  color: var(--third-color);
 }
 
 ul {
   list-style: none;
 }
 
-.homepage ul{
+.homepage ul {
   list-style: circle;
 }
 
@@ -75,7 +80,7 @@ input {
 }
 
 .edit-btn:hover {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 a.edit-btn {
@@ -90,7 +95,7 @@ form input.delete-btn {
 }
 
 form input.delete-btn:hover {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .flex-container {
@@ -109,47 +114,56 @@ form input.delete-btn:hover {
   display: inline-block;
 }
 
-.homepage {
+.homepage, .code-store {
   margin-left: 3rem;
   animation: fadeIn ease 4s;
   -webkit-animation: fadeIn ease 4s;
   -moz-animation: fadeIn ease 4s;
   -ms-animation: fadeIn ease 4s;
 }
+.code-store {
+  margin-left: 3rem;
+}
+
+.code-store a:hover{
+  color: var(--footer-background-color);
+  text-decoration: underline;
+}
 
 @keyframes fadeIn {
   0% {
-    opacity:0;
+    opacity: 0;
   }
   100% {
-    opacity:1;
+    opacity: 1;
   }
 }
 
 @-moz-keyframes fadeIn {
   0% {
-    opacity:0;
+    opacity: 0;
   }
   100% {
-    opacity:1;
+    opacity: 1;
   }
 }
 
 @-webkit-keyframes fadeIn {
   0% {
-    opacity:0;
+    opacity: 0;
   }
   100% {
-    opacity:1;
+    opacity: 1;
   }
 }
 
 @-ms-keyframes fadeIn {
   0% {
-    opacity:0;
+    opacity: 0;
   }
   100% {
-    opacity:1;
+    opacity: 1;
+  }
 }
 /*
 Small Screens
@@ -178,7 +192,8 @@ Small Screens
     width: 100%;
   }
 
-  .homepage {
+  .homepage,
+  .code-store {
     margin: 0;
     padding: 0.5rem;
   }
