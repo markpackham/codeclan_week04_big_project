@@ -98,6 +98,18 @@ class Customer
     return results.map { |hash| Customer.new(hash) }
   end
 
+  def self.newest_customers()
+    sql = "SELECT * FROM customers ORDER by id DESC LIMIT 3;"
+    results = SqlRunner.run(sql)
+    return results.map { |hash| Customer.new(hash) }
+  end
+
+  def self.oldest_customers()
+    sql = "SELECT * FROM customers ORDER by id ASC LIMIT 3;"
+    results = SqlRunner.run(sql)
+    return results.map { |hash| Customer.new(hash) }
+  end
+
   def pretty_name()
     return "#{@first_name.capitalize} #{@last_name.capitalize}"
   end

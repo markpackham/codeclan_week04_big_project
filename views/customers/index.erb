@@ -13,6 +13,17 @@
     <br>
   <% end %>
   <br>
+    <h2>Newest Customers</h2>
+  <% for newest_customer in @newest_customers %>
+      <a href="/lessons/<%= newest_customer.id %>"><%= newest_customer.pretty_name() %></a>
+    <br>
+  <% end %>
+    <h2>Oldest Customers</h2>
+  <% for oldest_customer in @oldest_customers %>
+      <a href="/lessons/<%= oldest_customer.id %>"><%= oldest_customer.pretty_name() %></a>
+    <br>
+  <% end %>
+  <br>
   Average customer's funds are: £<%= @average_funds %>
   <br>
   All the customers' funds combined: £<%= @sum_funds %>

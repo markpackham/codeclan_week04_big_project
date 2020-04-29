@@ -9,6 +9,8 @@ get "/customers" do
   @low_spenders = Customer.low_spenders()
   @average_funds = Customer.average_funds()
   @sum_funds = Customer.sum_funds()
+  @newest_customers = Customer.newest_customers()
+  @oldest_customers = Customer.oldest_customers()
   erb(:"customers/index")
 end
 

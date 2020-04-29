@@ -121,10 +121,9 @@ class Lesson
   end
 
   def self.lessons_with_customers()
-    sql = "SELECT DISTINCT lessons.name, lessons.id
-    FROM lessons
-    INNER JOIN customers_lessons ON customers_lessons.lesson_id = lessons.id
-    INNER JOIN customers ON customers_lessons.customer_id = customers.id;"
+    sql = "SELECT DISTINCT lessons.name, lessons.id FROM lessons
+    INNER JOIN customers_lessons
+    ON lessons.id = customers_lessons.lesson_id;"
     results = SqlRunner.run(sql)
     return results.map { |hash| Lesson.new(hash) }
   end
@@ -133,7 +132,7 @@ class Lesson
     sql = "SELECT lessons.name, lessons.id
     FROM lessons
     LEFT JOIN customers_lessons
-    ON lessons.id = customers_lessons.customer_id
+    ON lessons.id = customers_lessons.lesson_id
     WHERE customers_lessons.customer_id IS NULL;"
     results = SqlRunner.run(sql)
     return results.map { |hash| Lesson.new(hash) }
