@@ -120,7 +120,8 @@ class Lesson
     return results.map { |hash| Lesson.new(hash) }
   end
 
-  def lesson_class_size()
+  def reduce_max_capacity()
+    @max_capacity -= 1
   end
 
   def pretty_name()

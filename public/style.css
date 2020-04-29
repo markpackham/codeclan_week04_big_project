@@ -6,6 +6,7 @@
   --edit-foreground-color: rgb(252, 252, 252);
   --danger-background-color: rgb(114, 9, 14);
   --danger-foreground-color: rgb(252, 252, 252);
+  --footer-background-color: rgb(5, 57, 61);
 }
 
 body {
@@ -19,12 +20,16 @@ body {
 
 footer {
   margin-left: 46%;
+  padding: 0.5rem;
   position: fixed;
   bottom: 0;
+  background-color: var(--footer-background-color);
 }
 h1 {
   text-align: center;
   font-size: 2rem;
+  padding: 0.5rem;
+  background-color: var(--footer-background-color);
 }
 h2 {
   margin-bottom: 1rem;
@@ -96,7 +101,7 @@ form input.delete-btn:hover {
 Small Screens
 */
 @media (max-height: 640px) {
-  nav{
+  nav {
     text-align: center;
   }
 
@@ -110,7 +115,7 @@ Small Screens
     width: 100%;
   }
 
-  input{
+  input {
     width: 80%;
   }
 }

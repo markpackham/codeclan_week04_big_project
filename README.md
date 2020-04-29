@@ -4,7 +4,7 @@
 
 This is a gym recording keeping system intended for a gym owner to create customers and lessons then allocate customers to lessons.
 
-[The brief] (https://github.com/codeclan/e39_classnotes/blob/master/week_04/projects/bank/Gym.md)
+[The brief "the brief"](https://github.com/codeclan/e39_classnotes/blob/master/week_04/projects/bank/Gym.md)
 
 
 To run this software you need to have Ruby and PostGreSQL installed.
