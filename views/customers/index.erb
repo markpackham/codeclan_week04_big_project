@@ -1,16 +1,21 @@
 <h1>Customers</h1>
 <div class="flex-container">
 <div class="container">
-<div class="container">
-<h2>Top 3 Spenders</h2>
+<h2>Top 3 High Spenders</h2>
   <% for spender in @high_spenders %>
       <a href="/lessons/<%= spender.id %>"><%= spender.pretty_name() %></a> Funds: £<%= spender.funds %>
     <br>
   <% end %>
   <br>
-  The average customer's funds are: £<%= @average_funds %>
+  <h2>Top 3 Low Spenders</h2>
+  <% for spender in @low_spenders %>
+      <a href="/lessons/<%= spender.id %>"><%= spender.pretty_name() %></a> Funds: £<%= spender.funds %>
+    <br>
+  <% end %>
   <br>
-  All the customers' funds combined come to £<%= @sum_funds %>
+  Average customer's funds are: £<%= @average_funds %>
+  <br>
+  All the customers' funds combined: £<%= @sum_funds %>
 </div>
 <div class="content">
 <h2>All Customers</h2>

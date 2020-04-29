@@ -6,6 +6,7 @@ also_reload("../models/*")
 get "/customers" do
   @customers = Customer.all()
   @high_spenders = Customer.high_spenders()
+  @low_spenders = Customer.low_spenders()
   @average_funds = Customer.average_funds()
   @sum_funds = Customer.sum_funds()
   erb(:"customers/index")

@@ -31,6 +31,7 @@ h1 {
   font-size: 2rem;
   padding: 0.5rem;
   background-color: var(--footer-background-color);
+  text-shadow: 5px 5px rgb(53, 51, 51);
 }
 
 h2 {
@@ -46,7 +47,7 @@ a {
   text-decoration: none;
 }
 
-a:hover{
+a:hover {
   font-size: 1.1rem;
   color: var(--third-color);
 }
@@ -114,7 +115,8 @@ form input.delete-btn:hover {
   display: inline-block;
 }
 
-.homepage, .code-store {
+.homepage,
+.code-store {
   margin-left: 3rem;
   animation: fadeIn ease 4s;
   -webkit-animation: fadeIn ease 4s;
@@ -125,7 +127,7 @@ form input.delete-btn:hover {
   margin-left: 3rem;
 }
 
-.code-store a:hover{
+.code-store a:hover {
   color: var(--footer-background-color);
   text-decoration: underline;
 }
@@ -168,7 +170,7 @@ form input.delete-btn:hover {
 /*
 Small Screens
 */
-@media (max-height: 640px) {
+@media (max-height: 680px) {
   nav {
     text-align: center;
   }
@@ -189,7 +191,7 @@ Small Screens
 
   .container,
   .container-block {
-    width: 100%;
+    width: 90%;
   }
 
   .homepage,

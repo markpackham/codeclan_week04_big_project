@@ -8,6 +8,8 @@ get "/lessons" do
   @lessons_cheap = Lesson.cheap()
   @lessons_expensive = Lesson.expensive()
   @average_price = Lesson.average_price()
+  @lessons_with_customers = Lesson.lessons_with_customers()
+  @lessons_with_no_customers = Lesson.lessons_with_no_customers()
   erb (:"lessons/index")
 end
 

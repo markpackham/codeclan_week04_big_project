@@ -92,6 +92,12 @@ class Customer
     return results.map { |hash| Customer.new(hash) }
   end
 
+  def self.low_spenders()
+    sql = "SELECT * FROM customers ORDER by funds ASC LIMIT 3;"
+    results = SqlRunner.run(sql)
+    return results.map { |hash| Customer.new(hash) }
+  end
+
   def pretty_name()
     return "#{@first_name.capitalize} #{@last_name.capitalize}"
   end

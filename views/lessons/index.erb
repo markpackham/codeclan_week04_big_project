@@ -12,7 +12,7 @@
             Teacher: <%= lesson.pretty_name() %>
             <br>
             Max Capacity: <%= lesson.max_capacity %>
-            <br>
+            <br><br>
           <% end %>
         <% end %>
       <% end %>
@@ -69,6 +69,20 @@
               <a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a>
               <br>
             <% end %>
+          <% end %>
+        </div>
+          <div class="container">
+          <h2>Lessons With Customers</h2>
+          <% for lesson in @lessons_with_customers %>
+              <a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a>
+              <br><br>
+          <% end %>
+        </div>
+                  <div class="container">
+          <h2>Lessons Without Customers</h2>
+          <% for lesson in @lessons_with_no_customers %>
+              <a href="/lessons/<%= lesson.id %>"><%= lesson.name %></a>
+              <br><br>
           <% end %>
         </div>
       </div>
