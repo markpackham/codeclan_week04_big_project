@@ -3,24 +3,24 @@
 <div class="container">
 <h2>Top 3 High Spenders</h2>
   <% for spender in @high_spenders %>
-      <a href="/lessons/<%= spender.id %>"><%= spender.pretty_name() %></a> Funds: £<%= spender.funds %>
+      <a href="/customers/<%= spender.id %>"><%= spender.pretty_name() %></a> Funds: £<%= spender.funds %>
     <br>
   <% end %>
   <br>
   <h2>Top 3 Low Spenders</h2>
   <% for spender in @low_spenders %>
-      <a href="/lessons/<%= spender.id %>"><%= spender.pretty_name() %></a> Funds: £<%= spender.funds %>
+      <a href="/customers/<%= spender.id %>"><%= spender.pretty_name() %></a> Funds: £<%= spender.funds %>
     <br>
   <% end %>
   <br>
     <h2>Newest Customers</h2>
   <% for newest_customer in @newest_customers %>
-      <a href="/lessons/<%= newest_customer.id %>"><%= newest_customer.pretty_name() %></a>
+      <a href="/customers/<%= newest_customer.id %>"><%= newest_customer.pretty_name() %></a>
     <br>
   <% end %>
     <h2>Oldest Customers</h2>
   <% for oldest_customer in @oldest_customers %>
-      <a href="/lessons/<%= oldest_customer.id %>"><%= oldest_customer.pretty_name() %></a>
+      <a href="/customers/<%= oldest_customer.id %>"><%= oldest_customer.pretty_name() %></a>
     <br>
   <% end %>
   <br>
