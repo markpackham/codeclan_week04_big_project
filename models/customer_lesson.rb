@@ -60,6 +60,18 @@ class Customer_Lesson
     return results.map { |hash| Customer_Lesson.new(hash) }
   end
 
+  def self.all_tables()
+    sql = "SELECT * 
+    FROM lessons
+    INNER JOIN customers_lessons
+    ON lessons.id = customers_lessons.lesson_id
+    INNER JOIN customers
+    ON customers.id = customers_lessons.customer_id;"
+    results = SqlRunner.run(sql)
+    return results.map { |hash| Customer_Lesson.new(hash) }
+  end
+
+  
   def self.find(id)
     sql = "SELECT * FROM customers_lessons
     WHERE id = $1;"
